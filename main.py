@@ -671,7 +671,7 @@ with open(results_files_path + "/results.txt", 'w') as results_file:
 
         ap, mrec, mprec = voc_ap(rec[:], prec[:])
         sum_AP += ap
-	    print(ap)
+        print(ap)
         text = "{0:.2f}%".format(ap*100) + " = " + class_name + " AP " #class_name + " AP = {0:.2f}%".format(ap*100)
         """
          Write to results.txt
