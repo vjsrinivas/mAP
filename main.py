@@ -672,13 +672,15 @@ with open(results_files_path + "/results.txt", 'w') as results_file:
         ap, mrec, mprec = voc_ap(rec[:], prec[:])
         sum_AP += ap
         print(ap)
-        text = "{0:.2f}%".format(ap*100) + " = " + class_name + " AP " #class_name + " AP = {0:.2f}%".format(ap*100)
+        #text = "{0:.2f}%".format(ap*100) + " = " + class_name + " AP " #class_name + " AP = {0:.2f}%".format(ap*100)
+        text = "{0:.4f}\n".format(ap)
+        desc = class_name + " AP "
         """
          Write to results.txt
         """
         rounded_prec = [ '%.2f' % elem for elem in prec ]
         rounded_rec = [ '%.2f' % elem for elem in rec ]
-        results_file.write(text + "\n Precision: " + str(rounded_prec) + "\n Recall :" + str(rounded_rec) + "\n\n")
+        results_file.write(text + desc + "\n Precision: " + str(rounded_prec) + "\n Recall :" + str(rounded_rec) + "\n\n")
         if not args.quiet:
             print(text)
         ap_dictionary[class_name] = ap
