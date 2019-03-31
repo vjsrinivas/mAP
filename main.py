@@ -498,7 +498,7 @@ ap_dictionary = {}
 lamr_dictionary = {}
 # open file to store the results
 with open(results_files_path + "/results.txt", 'w') as results_file:
-    results_file.write("# AP and precision/recall per class\n")
+    #results_file.write("# AP and precision/recall per class\n")
     count_true_positives = {}
     for class_index, class_name in enumerate(gt_classes):
         count_true_positives[class_name] = 0
